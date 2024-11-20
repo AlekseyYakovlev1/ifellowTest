@@ -1,6 +1,8 @@
+package ru.iFellow.classes;
+
 import java.util.ArrayList;
 import java.util.List;
-abstract class Car {
+public abstract class Car {
     String model;
     int yearOfManufacture;
     String transmission;  // автоматическая/механическая
@@ -17,7 +19,7 @@ abstract class Car {
     }
     public String getCarInfo() {
         return "Модель: " + model + ", Год выпуска: " + yearOfManufacture + ", Коробка: " + transmission
-               + ", Цвет: " + color + ", Тип топлива: " + fuelType + ", VIN: " + vin;
+                + ", Цвет: " + color + ", Тип топлива: " + fuelType + ", VIN: " + vin;
     }
     public void changeColor(String newColor) {
         this.color = newColor;

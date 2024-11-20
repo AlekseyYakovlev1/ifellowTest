@@ -1,52 +1,37 @@
 package ru.iFellow;
 
-public class  Main  {
-    public static void  Main (String[] args) {
-        abstract class Car {
-            String model;//модель
-            int maxSpeed;//максимальная скорость
-            int wheels;//ширина дисков
-            double engineVolume;//объем двигателя
-            String color;//цвет
-            int yearOfIssue;//год выпуска
-            long price;//цена
+import ru.iFellow.classes.*;
 
-            public Car( String model, int maxSpeed, int wheels, double engineVolume, String color, int yearOfIssue, long price) {
-                this.model = model;
-                this.yearOfIssue = yearOfIssue;
-                this.maxSpeed = maxSpeed;
-                this.color = color;
-                this.wheels = wheels;
-                this.engineVolume = engineVolume;
-                this.price = price
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static <Car> void main(String[] args) {
+        List<Car> carList = new ArrayList<>();
+        ((ArrayList<?>) carList).add(new Suzuki(2010, "Автомат", "Зеленый", "Бензин", "SUZ123456789"));
+        carList.add((Car) new Toyota(2005, "Механика", "Красный", "Дизель", "TOY123456789"));
+        carList.add((Car) new Ford(2018, "Автомат", "Синий", "Бензин", "FOR123456789"));
+        carList.add((Car) new Honda(2002, "Механика", "Зеленый", "Электро", "HON123456789"));
+        carList.add((Car) new BMW(2020, "Автомат", "Черный", "Бензин", "BMW123456789"));
+        carList.add((Car) new Suzuki(2001, "Механика", "Синий", "Дизель", "SUZ987654321"));
+        carList.add((Car) new Toyota(2015, "Автомат", "Зеленый", "Бензин", "TOY987654321"));
+        carList.add((Car) new Ford(2008, "Механика", "Красный", "Дизель", "FOR987654321"));
+        carList.add((Car) new Honda(2021, "Автомат", "Черный", "Электро", "HON987654321"));
+        carList.add((Car) new BMW(2007, "Механика", "Зеленый", "Бензин", "BMW987654321"));
+        printCarsAfter2006(carList);
+        changeGreenToRed(carList);
+        printCarsAfter2006(carList);
+    }
+    public static void printCarsAfter2006(List<Car> cars) {
+        for (Car car : cars) {
+            System.out.println(car.checkCarAge());
+        }
+    }
+    public static void changeGreenToRed(List<Car> cars) {
+        for (Car car : cars) {
+            if (car.getColor().equals("Зеленый")) {
+                car.changeColor("Красный");
             }
-                public String getCarInfo() {
-                    return "Модель: " + model + ", Год выпуска: " + yearOfIssue + ", ширина дисков: " + wheels
-                            + ", Цвет: " + color + ", максимальная скорость: " + maxSpeed + ", объем двигателя: " + engineVolume + ", цена: " + price;
-                }
-                    class Suzuki extends Car {
-                        public Suzuki(model, int maxSpeed, int wheels, double engineVolume, String color, int yearOfIssue, long price) {
-                        }
-
-                        class Toyota extends Car {
-                            public Toyota(model, int maxSpeed, int wheels, double engineVolume, String color, int yearOfIssue, long price) {
-
-
-                                class Ford extends Car {
-                                    public Ford(model, int maxSpeed, int wheels, double engineVolume, String color, int yearOfIssue, long price) {
-
-                                        class Honda extends Car {
-                                            public Honda(model, int maxSpeed, int wheels, double engineVolume, String color, int yearOfIssue, long price) {
-                                                class Honda extends Car {
-                                                    public Honda(model, int maxSpeed, int wheels, double engineVolume, String color, int yearOfIssue, long price) {
-            public static void main(String[] args) {
-                Car BMV = new Car();
-                BMV.color = "green";
-                BMV.maxSpeed = 200
-                BMV.wheels = 17
-                BMV.engineVolume = 1.7;
-                BMV.yearOfIssue = 2007
-                BMV.price = 2000000;
         }
     }
 }
