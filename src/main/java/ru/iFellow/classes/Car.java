@@ -1,7 +1,5 @@
 package ru.iFellow.classes;
 
-import java.util.ArrayList;
-import java.util.List;
 public abstract class Car {
     String model;
     int yearOfManufacture;
