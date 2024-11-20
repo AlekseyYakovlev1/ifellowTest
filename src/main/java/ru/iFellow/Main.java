@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Main {
     public static <Car> void main(String[] args) {
-        List<Car> carList = new ArrayList<>();
-        ((ArrayList<?>) carList).add(new Suzuki(2010, "Автомат", "Зеленый", "Бензин", "SUZ123456789"));
+        List<Car> carList = new ArrayList<Car>();
+        carList.add((Car) new Suzuki(2010, "Автомат", "Зеленый", "Бензин", "SUZ123456789"));
         carList.add((Car) new Toyota(2005, "Механика", "Красный", "Дизель", "TOY123456789"));
         carList.add((Car) new Ford(2018, "Автомат", "Синий", "Бензин", "FOR123456789"));
         carList.add((Car) new Honda(2002, "Механика", "Зеленый", "Электро", "HON123456789"));
